@@ -47,11 +47,12 @@ export class jikanMainPage extends Component {
 const customLink = {
   width: "100%",
   display: "grid",
-  gridTemplateColumns: "auto auto auto auto auto auto auto",
-  justifyContent: "space-around",
-  alignItems: "center",
+  gridTemplateColumns: "repeat(auto-fit, minmax(225px, 1fr))",
+  //justifyContent: "space-around",
+  //alignItems: "center",
   listStyle: "none",  
-  gridGap: "2px 4px",
+  padding:"0",
+  //gridGap: "2px 4px",
 };
 
 
