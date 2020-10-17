@@ -24,16 +24,8 @@ function App() {
 
 const Home = () => (
   <React.Fragment>
-    <TransitionGroup
-      className="example"
-      transitionName="example"
-      transitionEnterTimeout={5000}
-      transitionLeaveTimeout={3000}
-    >
       <header className="App-header">
-        <CSSTransition in={true} appear={true} timeout={5000} classNames="fade">
           <img src={logo} className="App-logo" alt="logo" />
-        </CSSTransition>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -46,7 +38,6 @@ const Home = () => (
           Learn React
         </a>
       </header>
-    </TransitionGroup>
   </React.Fragment>
 );
 
