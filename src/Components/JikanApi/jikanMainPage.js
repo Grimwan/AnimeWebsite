@@ -73,23 +73,40 @@ export class jikanMainPage extends Component {
           </Header>
         <Layout>
           <Content>
-            <ul style= {customLink}>
-            {this.state.Animes.map((item,index) => (<li key = {item.mal_id}>
-              <JikanAnimeObject
-                image_url = {item.image_url}
-                airing = {item.airing}
-                synopsis = {item.synopsis}
-                end_Date = {item.end_Date}
-                ID = {index}
-                mal_id = {item.mal_id}
-                testcallback = {this.SiderToggle}
-              ></JikanAnimeObject></li>))}
-            </ul>
+            <div className= "MainContent" style = {MainContentStyle}>
+              <div className = "TableRow" style = {TableRowStyle}>
+                <div className = "LeftContent" style={LeftContentStyle}>
+                  <ul style= {customLink}>
+                  {this.state.Animes.map((item,index) => (<li key = {item.mal_id}>
+                    <JikanAnimeObject
+                      image_url = {item.image_url}
+                      airing = {item.airing}
+                      synopsis = {item.synopsis}
+                      end_Date = {item.end_Date}
+                      ID = {index}
+                      mal_id = {item.mal_id}
+                      testcallback = {this.SiderToggle}
+                    ></JikanAnimeObject></li>))}
+                  </ul>
+                </div>
+              {this.state.SiderToggle===true ? 
+              <div style={divstyleSidebar}>
+                <div onClick={()=> (this.setState({SiderToggle : false}))} style={divstyleSidebarTop}>    
+                  <img img src={this.state.Animes[this.state.arrayId].image_url} alt="alternatetext" style={imageSidebarStyle} ></img>
+                  <h1>Currently not he</h1>
+                  <h1>Currently not airing</h1>
+                  <h1>Currently not airing</h1>
+                  <h1>Currently not no</h1>
+                </div>
+                <div style = {divstyleSidebarTop}>
+                <h1>Currently not teest</h1>
+                  <h1>Currently nottetee</h1>
+                </div>
+              </div> : ""}  
+            </div>
+          </div>
           </Content>
-        {this.state.SiderToggle===true ? <Sider onClick={()=> (this.setState({SiderToggle : false}))}   >    
-         <img img src={this.state.Animes[this.state.arrayId].image_url} alt="alternatetext" style={imageSidebarStyle} ></img>
-         { <h1>Currently not airing</h1>}
-         </Sider> : ""}  
+       
         </Layout>
         </Layout>
       </React.Fragment>
@@ -97,10 +114,30 @@ export class jikanMainPage extends Component {
   }
 }
 
-const divstyleSidebar = {
-  width: "400",
-  marginLeft:"900"
+const MainContentStyle = {
+  width: "100%",
+  display: "table",
 }
+const LeftContentStyle = {
+  width: "80%",
+  display: "table-cell",
+}
+const TableRowStyle = {
+  display:"table-row"
+}
+
+const divstyleSidebar = {
+  display: "table-cell",
+
+}
+const divstyleSidebarTop = {
+  top:"0",
+  position:" sticky",
+  position: "-webkit-sticky",
+}
+
+
+
 
 const imageSidebarStyle = {
   width: "100%",
