@@ -86,9 +86,11 @@ export class jikanMainPage extends Component {
               ></JikanAnimeObject></li>))}
             </ul>
           </Content>
-        {this.state.SiderToggle===true ? <Sider onClick={()=> (this.setState({SiderToggle : false}))}   >    
+        {this.state.SiderToggle===true ? <Sider onClick={()=> (this.setState({SiderToggle : false}))} width="20%"  >
+          <div className= "stickyDiv" style={stickDiv}>    
          <img img src={this.state.Animes[this.state.arrayId].image_url} alt="alternatetext" style={imageSidebarStyle} ></img>
          { <h1>Currently not airing</h1>}
+         </div>
          </Sider> : ""}  
         </Layout>
         </Layout>
@@ -97,18 +99,17 @@ export class jikanMainPage extends Component {
   }
 }
 
-const divstyleSidebar = {
-  width: "400",
-  marginLeft:"900"
-}
 
 const imageSidebarStyle = {
-  width: "100%",
-  height:"100%",
   filter: "grayscale(50%)",
   opacity: "0.2",
+  width: "100%",
+  height: "auto",
 }
-
+const stickDiv = {
+  position:"sticky",
+  top:"0",
+}
 const customLink = {
   width: "100%",
   display: "grid",
