@@ -86,11 +86,37 @@ export class jikanMainPage extends Component {
               ></JikanAnimeObject></li>))}
             </ul>
           </Content>
-        {this.state.SiderToggle===true ? <Sider onClick={()=> (this.setState({SiderToggle : false}))} width="20%" height="20%" >
-          <div className= "stickyDiv" style={stickDiv}>    
+        {this.state.SiderToggle===true ? <Sider onClick={()=> (this.setState({SiderToggle : false}))} style={SiderBarStyle} width="20%" height="20%" >
+         
          <img img src={this.state.Animes[this.state.arrayId].image_url} alt="alternatetext" style={imageSidebarStyle} ></img>
          { <h1>Currently not airing</h1>}
-         </div>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>Currently not airing</h1>
+         <h1>hehehehe</h1>
          </Sider> : ""}  
         </Layout>
         </Layout>
@@ -99,18 +125,19 @@ export class jikanMainPage extends Component {
   }
 }
 
+const SiderBarStyle = {
+  overflow: 'auto',
+  height: '80vh',
+  top:"0",
+  position: 'sticky',
+}
 
 const imageSidebarStyle = {
   filter: "grayscale(50%)",
   width: "100%",
   height: "auto",
 }
-const stickDiv = {
-  position:"sticky",
-  top:"0",
-  maxHeight:"150%",
-  overflowy: "scroll"
-}
+
 const customLink = {
   width: "100%",
   display: "grid",
