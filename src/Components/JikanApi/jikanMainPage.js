@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchFormJikan from "./SearchFormJikan";
 import  JikanAnimeObject from "./JikanAnimeObject";
+import JikanAnimeSidePanel from "./JikanAnimeSidePanel";
 
 import {Layout} from 'antd'
 import 'antd/dist/antd.css';
@@ -71,58 +72,36 @@ export class jikanMainPage extends Component {
             >  
             </SearchFormJikan>
           </Header>
-        <Layout>
-          <Content>
-            <ul style= {customLink}>
-            {this.state.Animes.map((item,index) => (<li key = {item.mal_id}>
-              <JikanAnimeObject
-                image_url = {item.image_url}
-                airing = {item.airing}
-                synopsis = {item.synopsis}
-                end_Date = {item.end_Date}
-                ID = {index}
-                mal_id = {item.mal_id}
-                testcallback = {this.SiderToggle}
-              ></JikanAnimeObject></li>))}
-            </ul>
-          </Content>
-        {this.state.SiderToggle===true ? <Sider onClick={()=> (this.setState({SiderToggle : false}))} style={SiderBarStyle} width="20%" height="20%" >
-         
-         <img img src={this.state.Animes[this.state.arrayId].image_url} alt="alternatetext" style={imageSidebarStyle} ></img>
-         { <h1>Currently not airing</h1>}
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>Currently not airing</h1>
-         <h1>hehehehe</h1>
-         </Sider> : ""}  
-        </Layout>
+          <Layout>
+            <Content>
+              <ul style= {customLink}>
+              {this.state.Animes.map((item,index) => (<li key = {item.mal_id}>
+                <JikanAnimeObject
+                  image_url = {item.image_url}
+                  airing = {item.airing}
+                  synopsis = {item.synopsis}
+                  end_Date = {item.end_Date}
+                  ID = {index}
+                  mal_id = {item.mal_id}
+                  testcallback = {this.SiderToggle}
+                ></JikanAnimeObject></li>))}
+              </ul>
+            </Content>
+           
+          {this.state.SiderToggle===true ?
+          <JikanAnimeSidePanel siderToggle = {()=>(this.setState({SiderToggle : false}))} 
+            Anime ={this.state.Animes[this.state.arrayId]} >
+          </JikanAnimeSidePanel> : ""}  
+          </Layout>
         </Layout>
       </React.Fragment>
     );
   }
+}
+
+const TextStyle = 
+{
+  color:"White",
 }
 
 const SiderBarStyle = {
