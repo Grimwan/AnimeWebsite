@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchFormJikan from "./SearchFormJikan";
 import  JikanAnimeObject from "./JikanAnimeObject";
 import JikanAnimeSidePanel from "./JikanAnimeSidePanel";
-
+import Background from '../../Images/Goku4kBackground.png';
 import {Layout} from 'antd'
 import 'antd/dist/antd.css';
 const { Header, Footer, Sider, Content } = Layout;
@@ -50,9 +50,8 @@ export class jikanMainPage extends Component {
     if(Value === this.state.arrayId && this.state.SiderToggle == true)
       this.setState({SiderToggle:false});
     else
-    {
       this.setState({SiderToggle:true, arrayId: Value});
-    }
+
   }
   
   Testcallback(Value)
@@ -64,15 +63,13 @@ export class jikanMainPage extends Component {
   render() {
     return (
       <React.Fragment>
-        <Layout>
-          <Header>
-            <SearchFormJikan
+        <Layout style={LayoutBackgroundStyle}>
+            <SearchFormJikan 
               onSearchValueChange={this.UpdateSearch}
               onFormSubmit={this.SearchAnime}
             >  
             </SearchFormJikan>
-          </Header>
-          <Layout>
+          <Layout style={LayoutBackgroundStyle}>
             <Content>
               <ul style= {customLink}>
               {this.state.Animes.map((item,index) => (<li key = {item.mal_id}>
@@ -99,33 +96,30 @@ export class jikanMainPage extends Component {
   }
 }
 
-const TextStyle = 
-{
-  color:"White",
+
+
+const LayoutBackgroundStyle = {
+  backgroundRepeat: "no-repeat",
+  backgroundAttachment: "fixed",
+  backgroundImage: `url(${Background})`,
+  backgroundColor: "#cccccc",
+  backgroundSize: "cover"
 }
 
-const SiderBarStyle = {
-  overflow: 'auto',
-  height: '80vh',
-  top:"0",
-  position: 'sticky',
-}
-
-const imageSidebarStyle = {
-  filter: "grayscale(50%)",
-  width: "100%",
-  height: "auto",
-}
 
 const customLink = {
   width: "100%",
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(225px, 1fr))",
+  gridTemplateColumns: "repeat(auto-fit,minmax(22vh, 1fr))",
+  //gridTemplateRows: "repeat(3, 200px)",
   //justifyContent: "space-around",
   //alignItems: "center",
   listStyle: "none",  
   padding:"0",
+  //gridGap: "5px",
+  //margin: "5px",
   //gridGap: "2px 4px",
+ 
 };
 
 

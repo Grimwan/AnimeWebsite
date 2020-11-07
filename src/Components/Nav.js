@@ -23,7 +23,7 @@ export class Nav extends Component {
 }
 const navstyle = {
   //background: "#000000",
-  color: "#7454AB",
+  color: "#000000",
   fontSize: "30px",
 };
 const customNavOne = {
@@ -31,8 +31,9 @@ const customNavOne = {
   justifyContent: "space-around",
   alignItems: "center",
   minHeight: "10vh",
-  background: "#ab7454",
+  //background: "#9c56a9",
   color: "white",
+  backgroundColor: "rgba(116, 84, 171, 0.75)", /* 75% opacity */
 };
 const customLink = {
   width: "50%",

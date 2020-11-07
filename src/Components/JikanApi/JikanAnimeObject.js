@@ -37,7 +37,7 @@ export class JikanAnimeObject extends Component {
           <p>{this.props.synopsis}</p>
           <p>Some contents...</p>
         </Modal>
-                <img src={this.props.image_url} onDoubleClick={this.showModal} onClick={()=>(this.props.testcallback(this.props.ID))} alt="alternatetext"></img> 
+                <img style={{width:"100%",height: "100%"}} src={this.props.image_url} onDoubleClick={this.showModal} onClick={()=>(this.props.testcallback(this.props.ID))} alt="updated"></img> 
             </React.Fragment>
         )
     }

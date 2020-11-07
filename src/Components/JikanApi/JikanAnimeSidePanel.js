@@ -10,7 +10,7 @@ export class JikanAnimeSidePanel extends Component {
     render() {
         const Anime = this.props.Anime;
         return (
-            <Sider onClick={()=>{this.props.siderToggle()}} style={SiderBarStyle} width="20%" height="20%" >
+            <Sider onClick={()=>{this.props.siderToggle()}} style={SiderBarStyle} width="20%" >
               <h2 style={TextStyle}>{Anime.title}</h2>
               <h1 style={TextStyle}>{Anime.type}</h1>
               <img img src={Anime.image_url} alt="alternatetext" style={imageSidebarStyle} ></img>
